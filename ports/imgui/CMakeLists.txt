@@ -103,6 +103,7 @@ if(IMGUI_BUILD_VULKAN_BINDING)
     find_package(Vulkan REQUIRED)
     target_link_libraries(${PROJECT_NAME} PUBLIC Vulkan::Vulkan)
     target_sources(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/backends/imgui_impl_vulkan.cpp)
+    target_compile_definitions(${PROJECT_NAME} IMGUI_IMPL_VULKAN IMGUI_IMPL_VULKAN_USE_VOLK IMGUI_IMPL_VULKAN_USE_LOADER)
 endif()
 
 if(IMGUI_BUILD_WIN32_BINDING)
